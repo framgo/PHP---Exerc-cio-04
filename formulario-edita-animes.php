@@ -2,8 +2,8 @@
     include('config.php');
     
     require_once('repository/AnimesRepository.php');
-    $id = $_SESSION['id'];
-    $animes = fnLocalizaAnimesPorID($id);
+    
+    $animes = fnLocalizaAnimesPorID($_SESSION['id']);
 ?>
 
 <!doctype html>

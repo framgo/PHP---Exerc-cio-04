@@ -32,7 +32,7 @@
 
                     <label for="nomeId" class="form-label">Nome</label>
 
-                    <input type="text" name="nome" id="nomeId" class="form-control" placeholder="Informe o nome do anime">
+                    <input type="text" name="nome" id="nomeId" class="form-control" placeholder="Informe o nome do anime" required>
 
                     <div id="helperNome" class="form-text">Informe o nome do anime</div>
 
@@ -42,7 +42,7 @@
 
                     <label for="generoId" class="form-label">Gênero</label>
 
-                    <input type="text" name="genero" id="generoId" class="form-control" placeholder="Informe o gênero do anime">
+                    <input type="text" name="genero" id="generoId" class="form-control" placeholder="Informe o gênero do anime" required>
 
                     <div id="helperGenero" class="form-text">Informe o gênero do anime</div>
 
@@ -52,7 +52,7 @@
 
                     <label for="episodiosId" class="form-label">Episódios</label>
 
-                    <input type="text" name="episodios" id="episodiosId" class="form-control" placeholder="Informe os episódios do anime">
+                    <input type="number" name="episodios" id="episodiosId" class="form-control" placeholder="Informe os episódios do anime" required>
 
                     <div id="helperEpisodios" class="form-text">Informe os episódios</div>
 
@@ -62,9 +62,9 @@
 
                     <label for="lancamentoId" class="form-label">Lançamento</label>
 
-                    <input type="text" name="lancamento" id="lancamentoId" class="form-control" placeholder="Informe o lançamento do anime">
+                    <input type="date" name="lancamento" id="lancamentoId" class="form-control" placeholder="Informe o lançamento do anime" required>
 
-                    <div id="helperLancamento" class="form-text">Informe o lançamento AAAA-MM-DD</div>
+                    <div id="helperLancamento" class="form-text">Informe o lançamento DD/MM/AAAA</div>
 
                 </div>
 

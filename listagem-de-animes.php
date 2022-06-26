@@ -48,8 +48,8 @@
                     <td><?= $animes->episodios ?></td>
                     <td><?= $animes->lancamento ?></td>
                     <td><?= $animes->created_at ?></td>
-                    <td><a href="formulario-edita-animes.php?id=<?= $animes->id ?>">Editar</td>
-                    <td><a onclick="return confirm('Deseja realmente excluir?');" href="excluirAnimes.php?id=<?= $animes->id ?>">Excluir</td>
+                    <td><a href="#" onclick="gerirAnimes(<?= $animes->id ?>, 'edit');">Editar</td>
+                    <td><a onclick="return confirm('Deseja realmente excluir?') ? gerirAnimes(<?= $animes->id ?>, 'del') : '';" href="#">Excluir</td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -62,8 +62,34 @@
             <?php endif; ?>
         </table>
     </div>
-
     <?php include("rodape.php"); ?>
+    <script>
+
+        window.post = function(data) {
+            return fetch(
+                'set-session.php',
+                {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                }
+            )
+            .then(response =>{
+                console.log(`Requesição completa! Resposta:`, response);
+            });
+        }
+
+        function gerirAnimes(id, action) {
+
+            post({data : id});
+
+            url = 'excluirAnimes.php';
+            if(action === 'edit')
+            url = 'formulario-edita-animes.php';
+
+            window.location.href = url;
+        }
+    </script>
   </body>
 
 </html>

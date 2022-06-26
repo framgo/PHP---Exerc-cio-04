@@ -26,7 +26,7 @@
       </ul>
       <form id="formSearchName" class="d-flex" role="search" method="POST" action="localiza-animes.php">
         <input id="searchName" class="form-control me-2" name="nomeAnimes" type="search" placeholder="Informe o anime" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <a class="btn btn-outline-danger" href="logout.php">Logout</a>
       </form>
     </div>
   </div>
