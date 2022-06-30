@@ -3,14 +3,15 @@
     require_once('Connection.php');
 
 
-    function fnAddAnimes($nome, $genero, $episodios, $lancamento) {
+    function fnAddAnimes($nome, $foto, $genero, $episodios, $lancamento) {
 
         $con = getConnection();
         
-        $sql = "insert into desenhos (nome, genero, episodios, lancamento) values (:pNome, :pGenero, :pEpisodios, :pLancamento)";
+        $sql = "insert into desenhos (nome, foto, genero, episodios, lancamento) values (:pNome, :pFoto ,:pGenero, :pEpisodios, :pLancamento)";
         
         $stmt = $con->prepare($sql);
         $stmt->bindParam(":pNome", $nome);
+        $stmt->bindParam(":pFoto", $foto);
         $stmt->bindParam(":pGenero", $genero);
         $stmt->bindParam(":pEpisodios", $episodios);
         $stmt->bindParam(":pLancamento", $lancamento);

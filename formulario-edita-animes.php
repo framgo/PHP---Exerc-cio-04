@@ -25,68 +25,40 @@
   <body>
   <?php include('navbar.php'); ?>
     <div class="col-6 offset-3">
-
         <fieldset>
-
             <legend>Edição de Animes</legend>
-
             <form action="editaAnimes.php" method="post" class="form">
-
-                <div >
-
+                <div class="card col-4 offset-4 text-center">
+                    <img src="./<?= $animes->foto ?>" class="rounded" alt="Foto do anime">
+                </div>
+                <div>
                     <input type="hidden" name="idAnimes" id="animesId"  value="<?= $animes->id ?>">
-
                 </div>
-
                 <div class="mb-3 form-group">
-
                     <label for="nomeId" class="form-label">Nome</label>
-
                     <input type="text" name="nome" id="nomeId" class="form-control" placeholder="Informe o nome do anime" value="<?= $animes->nome ?>">
-
                     <div id="helperNome" class="form-text">Informe o nome do anime</div>
-
                 </div>
-
                 <div class="mb-3 form-group">
-
                     <label for="generoId" class="form-label">Gênero</label>
-
                     <input type="text" name="genero" id="generoId" class="form-control" placeholder="Informe o gênero do anime" value="<?= $animes->genero ?>">
-
                     <div id="helperGenero" class="form-text">Informe o gênero do anime</div>
-
                 </div>
-
                 <div class="mb-3 form-group">
-
                     <label for="episodiosId" class="form-label">Episódios</label>
-
                     <input type="text" name="episodios" id="episodiosId" class="form-control" placeholder="Informe os episódios do anime" value="<?= $animes->episodios ?>">
-
                     <div id="helperEpisodios" class="form-text">Informe os episódios</div>
-
                 </div>
-
                 <div class="mb-3 form-group">
-
                     <label for="lancamentoId" class="form-label">Lançamento</label>
-
                     <input type="text" name="lancamento" id="lancamentoId" class="form-control" placeholder="Informe o lançamento do anime" value="<?= $animes->lancamento ?>">
-
                     <div id="helperLancamento" class="form-text">Informe o lançamento AAAA-MM-DD</div>
-
                 </div>
-
                 <button type="submit" class="btn btn-dark">Enviar</button>
                 <div id="notify" class="form-text text-capitalize fs-4"><?= isset($_COOKIE['notify']) ? $_COOKIE['notify'] : '' ?></div>
-
             </form>
-
         </fieldset>
-
     </div>
-
     <?php include("rodape.php"); ?>
   </body>
 
