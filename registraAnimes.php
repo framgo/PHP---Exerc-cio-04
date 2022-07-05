@@ -1,13 +1,13 @@
 <?php
 
 require_once('repository/AnimesRepository.php');
-require_once('util/upload.php');
+require_once('util/base64.php');
 
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_SPECIAL_CHARS);
 $episodios = filter_input(INPUT_POST, 'episodios', FILTER_SANITIZE_NUMBER_INT);
 $lancamento = filter_input(INPUT_POST, 'lancamento', FILTER_SANITIZE_NUMBER_INT);
-$foto = uploadImg($_FILES['foto']);
+$foto = converterBase64($_FILES['foto']);
 
 if(empty($nome) || empty($genero) || empty($episodios) || empty($lancamento) || empty($foto)) {
     $msg = "Preencha todos os campos";    

@@ -63,15 +63,16 @@
         return null;
     }
 
-    function fnUpdateAnimes($id, $nome, $genero, $episodios, $lancamento) {
+    function fnUpdateAnimes($id, $nome, $foto, $genero, $episodios, $lancamento) {
 
         $con = getConnection();
         
-        $sql = "update desenhos set nome = :pNome, genero = :pGenero, episodios = :pEpisodios, lancamento = :pLancamento where id = :pID";
+        $sql = "update desenhos set nome = :pNome, foto = :pFoto,genero = :pGenero, episodios = :pEpisodios, lancamento = :pLancamento where id = :pID";
         
         $stmt = $con->prepare($sql);
         $stmt->bindParam(":pID", $id);
         $stmt->bindParam(":pNome", $nome);
+        $stmt->bindParam(":pFoto", $foto);
         $stmt->bindParam(":pGenero", $genero);
         $stmt->bindParam(":pEpisodios", $episodios);
         $stmt->bindParam(":pLancamento", $lancamento);
